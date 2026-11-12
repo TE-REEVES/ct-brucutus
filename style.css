@@ -1,0 +1,719 @@
+/* =========================================================
+   CT BRUCUTUS
+   Central de Links
+   ========================================================= */
+
+
+/* =========================================================
+   1. VARIÁVEIS
+   ========================================================= */
+
+:root {
+  --orange: #E8711A;
+  --black: #0D0D0D;
+  --white: #FFFFFF;
+  --steel: #8E8E8E;
+
+  --surface: rgba(20, 20, 20, 0.92);
+  --surface-hover: rgba(32, 32, 32, 0.96);
+  --border: rgba(255, 255, 255, 0.10);
+
+  --font-title: "Oswald", sans-serif;
+  --font-main: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --content-width: 520px;
+  --page-padding: clamp(16px, 4vw, 34px);
+}
+
+
+/* =========================================================
+   2. RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--black);
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: var(--font-main);
+  color: var(--white);
+  background: var(--black);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+}
+
+
+/* =========================================================
+   3. PÁGINA
+   ========================================================= */
+
+.page-shell {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding:
+    max(28px, env(safe-area-inset-top))
+    var(--page-padding)
+    max(28px, env(safe-area-inset-bottom));
+  background:
+    url("./assets/brucutus-bg.jpg")
+    center center / cover
+    no-repeat;
+  overflow-x: hidden;
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   4. OVERLAY
+   ========================================================= */
+
+.background-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(13, 13, 13, 0.92) 0%,
+      rgba(13, 13, 13, 0.72) 20%,
+      rgba(13, 13, 13, 0.42) 50%,
+      rgba(13, 13, 13, 0.72) 80%,
+      rgba(13, 13, 13, 0.92) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(13, 13, 13, 0.50) 0%,
+      rgba(13, 13, 13, 0.40) 28%,
+      rgba(13, 13, 13, 0.70) 72%,
+      rgba(13, 13, 13, 0.96) 100%
+    ),
+    radial-gradient(
+      circle at 50% 26%,
+      rgba(232, 113, 26, 0.16) 0%,
+      rgba(232, 113, 26, 0.05) 26%,
+      rgba(13, 13, 13, 0) 60%
+    );
+}
+
+
+/* =========================================================
+   5. WRAPPER
+   ========================================================= */
+
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   6. LINK CARD
+   ========================================================= */
+
+.link-card {
+  width: min(100%, var(--content-width));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
+/* =========================================================
+   7. TEXTOS SUPERIORES
+   ========================================================= */
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--orange);
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.tagline {
+  margin: 0 0 8px;
+  color: var(--orange);
+  font-family: var(--font-title);
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.support-text {
+  max-width: 440px;
+  margin: 0 0 28px;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   8. LOGO
+   ========================================================= */
+
+.brand-mark {
+  width: clamp(150px, 26vw, 210px);
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.82);
+  border: 1px solid rgba(232, 113, 26, 0.24);
+  box-shadow:
+    0 14px 34px rgba(0, 0, 0, 0.28),
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+}
+
+.brand-logo {
+  width: 92%;
+  height: 92%;
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   9. TÍTULO
+   ========================================================= */
+
+h1 {
+  margin: 0 0 10px;
+  color: var(--white);
+  font-family: var(--font-title);
+  font-size: clamp(2.3rem, 7vw, 3.5rem);
+  line-height: 0.95;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   10. LINKS
+   ========================================================= */
+
+.links {
+  width: 100%;
+  display: grid;
+  gap: 12px;
+}
+
+
+/* =========================================================
+   11. BOTÕES
+   ========================================================= */
+
+.link-button {
+  position: relative;
+  width: 100%;
+  min-height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 70px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--white);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.20),
+    inset 0 1px 0 rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.link-button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 14px;
+  bottom: 14px;
+  width: 4px;
+  border-radius: 0 4px 4px 0;
+  background: var(--orange);
+}
+
+.link-button:hover {
+  transform: translateY(-2px);
+  background: var(--surface-hover);
+  border-color: rgba(232, 113, 26, 0.55);
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.28);
+}
+
+.link-button:active {
+  transform: translateY(0);
+}
+
+.link-label {
+  display: block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+
+/* =========================================================
+   12. BADGES
+   ========================================================= */
+
+.icon-badge {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border-radius: 11px;
+  background: var(--orange);
+  color: var(--white);
+  overflow: hidden;
+  transition:
+    transform 180ms ease,
+    filter 180ms ease;
+}
+
+.icon-badge svg {
+  width: 23px;
+  height: 23px;
+  fill: currentColor;
+}
+
+.icon-badge path {
+  fill: currentColor;
+}
+
+.link-button:hover .icon-badge {
+  transform: translateY(-50%) scale(1.04);
+  filter: brightness(1.05);
+}
+
+
+/* =========================================================
+   13. FEEDBACK
+   ========================================================= */
+
+.copy-feedback {
+  min-height: 20px;
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.82rem;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(-5px);
+  pointer-events: none;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.copy-feedback.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   14. ENDEREÇO
+   ========================================================= */
+
+.address {
+  width: min(100%, 470px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 30px auto 0;
+  padding: 0 10px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.93rem;
+  font-weight: 500;
+  line-height: 1.35;
+  text-align: center;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.address:hover {
+  color: var(--white);
+}
+
+.address span {
+  display: block;
+  max-width: 390px;
+  text-align: center;
+}
+
+.address svg {
+  width: 21px;
+  height: 21px;
+  flex: 0 0 21px;
+  fill: var(--orange);
+}
+
+
+/* =========================================================
+   15. HORÁRIOS
+   ========================================================= */
+
+.hours {
+  width: min(100%, var(--content-width));
+  margin-top: 28px;
+  padding: 20px 22px;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  background: rgba(20, 20, 20, 0.90);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  text-align: left;
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.16);
+}
+
+.hours__title {
+  margin: 0 0 14px;
+  color: var(--orange);
+  font-family: var(--font-title);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hours__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.92rem;
+}
+
+.hours__row:last-child {
+  border-bottom: none;
+}
+
+.hours__row strong {
+  color: var(--white);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   16. MODALIDADES
+   ========================================================= */
+
+.modalities {
+  width: min(100%, var(--content-width));
+  margin-top: 20px;
+  text-align: center;
+}
+
+.modalities__title {
+  margin: 0 0 12px;
+  color: var(--orange);
+  font-family: var(--font-title);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.modalities__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.modalities__list span {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(20, 20, 20, 0.88);
+  border: 1px solid rgba(232, 113, 26, 0.22);
+  color: var(--white);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   17. FOOTER
+   ========================================================= */
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 28px;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 0.76rem;
+}
+
+.footer a {
+  color: rgba(255, 255, 255, 0.80);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.footer a:hover {
+  color: var(--orange);
+}
+
+
+/* =========================================================
+   18. ACESSIBILIDADE
+   ========================================================= */
+
+.link-button:focus-visible,
+.address:focus-visible,
+.footer a:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 4px;
+}
+
+
+/* =========================================================
+   19. RESPONSIVO TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .page-shell {
+    background-position: 54% center;
+  }
+}
+
+
+/* =========================================================
+   20. RESPONSIVO MOBILE
+   ========================================================= */
+
+@media (max-width: 520px) {
+  .page-shell {
+    padding-top: max(24px, env(safe-area-inset-top));
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: max(28px, env(safe-area-inset-bottom));
+    background-position: 58% center;
+  }
+
+  .eyebrow {
+    font-size: 0.82rem;
+    margin-bottom: 10px;
+  }
+
+  .brand-mark {
+    width: 150px;
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+    margin-bottom: 10px;
+  }
+
+  .tagline {
+    font-size: 0.95rem;
+  }
+
+  .support-text {
+    margin-bottom: 24px;
+    font-size: 0.90rem;
+  }
+
+  .links {
+    gap: 10px;
+  }
+
+  .link-button {
+    min-height: 56px;
+    padding: 12px 58px;
+    border-radius: 13px;
+    font-size: clamp(0.88rem, 3.7vw, 0.96rem);
+  }
+
+  .link-button::before {
+    top: 13px;
+    bottom: 13px;
+  }
+
+  .icon-badge {
+    right: 5px;
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+  }
+
+  .icon-badge svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .address {
+    max-width: 340px;
+    margin-top: 26px;
+    font-size: 0.86rem;
+  }
+
+  .address span {
+    max-width: 285px;
+  }
+
+  .hours {
+    margin-top: 24px;
+    padding: 17px 16px;
+    border-radius: 14px;
+  }
+
+  .hours__title {
+    font-size: 0.92rem;
+  }
+
+  .hours__row {
+    gap: 12px;
+    padding: 8px 0;
+    font-size: 0.83rem;
+  }
+
+  .modalities__title {
+    font-size: 0.92rem;
+  }
+
+  .modalities__list span {
+    font-size: 0.85rem;
+    padding: 9px 12px;
+  }
+}
+
+
+/* =========================================================
+   21. MOBILE PEQUENO
+   ========================================================= */
+
+@media (max-width: 380px) {
+  .page-shell {
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+
+  .brand-mark {
+    width: 138px;
+  }
+
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  .link-button {
+    min-height: 54px;
+    padding-left: 54px;
+    padding-right: 54px;
+    font-size: 0.83rem;
+  }
+
+  .icon-badge {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+
+/* =========================================================
+   22. LANDSCAPE / TELAS BAIXAS
+   ========================================================= */
+
+@media (max-height: 680px) and (orientation: landscape) {
+  .page-shell {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .brand-mark {
+    width: 128px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .link-button {
+    min-height: 50px;
+  }
+
+  .icon-badge {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+
+/* =========================================================
+   23. REDUÇÃO DE MOVIMENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
