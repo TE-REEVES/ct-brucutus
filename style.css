@@ -373,7 +373,7 @@ h1 {
 .address {
   width: min(100%, 470px);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 10px;
   margin: 30px auto 0;
