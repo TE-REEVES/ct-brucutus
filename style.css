@@ -38,7 +38,7 @@
 
 html {
   min-height: 100%;
-  background: var(--black);
+  : var(--black);
   overflow-x: hidden;
 }
 
@@ -47,7 +47,7 @@ body {
   min-height: 100%;
   font-family: var(--font-main);
   color: var(--white);
-  background: var(--black);
+  : var(--black);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -81,7 +81,7 @@ button {
     var(--page-padding)
     max(28px, env(safe-area-inset-bottom));
   background:
-    url("./assets/brucutus-bg.jpg")
+    url("./assets/backgroundimg.webp")
     center center / cover
     no-repeat;
   overflow-x: hidden;
